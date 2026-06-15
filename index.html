@@ -1,79 +1,235 @@
+  
  <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Facebook Login Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zainulabdin Memon | Portfolio</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        /* Body ka background halka grey */
         body {
-            background-color: lightgrey; 
+            font-family: 'Poppins', sans-serif;
+            background-color: #0f172a; /* Premium Dark Background */
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+        
+        /* Glassmorphism Effect for Navbar */
+        .navbar {
+            background: rgba(15, 23, 42, 0.8) !important;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Facebook ki badi heading */
-        h1 {
-            color: blue; 
-            text-align: center;
+        /* Hero Section with Glowing Gradient */
+        .hero-section {
+            padding: 150px 0 100px 0;
+            background: radial-gradient(circle at top right, rgba(99, 102, 241, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(236, 72, 153, 0.15), transparent);
         }
 
-        /* Safaid rang ka main dabba jo tumne aaj seekha */
-        form {
-            background-color: white;
-            max-width: 350px;
-            margin: 50px auto; /* Beech mein lane ke liye */
-            padding: 30px;
-            border-radius: 15px; /* Gol kone */
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15); /* Saaya */
-            text-align: center;
-        }
-p{
-  text-align: end;
-  color: blue;
-  font-size: medium
-}
-        /* Inputs ki setting */
-        input {
-            width: 80%;
-            padding: 10px;
-            border: 1px solid grey;
-            border-radius: 5px;
+        .text-gradient {
+            background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        /* Blue Button ki setting */
-        button {
-            width: 60%;
-            background-color: blue;
-            color: white;
-            font-size: 18px;
-            padding: 10px;
+        /* VVIP Premium Buttons */
+        .btn-premium {
+            background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s; /* Smooth animation */
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+            transition: all 0.3s ease;
+        }
+        .btn-premium:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(236, 72, 153, 0.6);
+            color: white;
         }
 
-        /* 🔥 Tumhara pasandida Hover Effect */
-        button:hover {
-            background-color: darkblue; 
-            transform: scale(1.05); /* Hulk nahi, pyara sa bada hoga */
+        /* Glass Cards with Hover Glow */
+        .vvip-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 20px;
+            backdrop-filter: blur(5px);
+            transition: all 0.4s ease;
+        }
+        .vvip-card:hover {
+            transform: translateY(-10px);
+            border-color: #6366f1;
+            box-shadow: 0 10px 30px rgba(99, 102, 241, 0.2);
+        }
+
+        /* Glow Badges for Skills */
+        .skill-badge {
+            background: rgba(99, 102, 241, 0.1);
+            color: #a5b4fc;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            padding: 10px 20px;
+            border-radius: 50px;
+            margin: 8px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        .skill-badge:hover {
+            background: #6366f1;
+            color: white;
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.5);
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
 
-    <!-- Simple Dhacha jo tumhein aata hai -->
-    <form>
-        <h1>facebook</h1>
-        
-        <input type="text" placeholder="Email address or phone number">
-        <br><br>
-        
-        <input type="password" placeholder="Password">
-        <br><br>
-        
-        <button type="submit">Log In</button>
-        <br><br>
-        
-        <a href="#">Forgotten password?</a>
-    </form>
-<p>Made by Zain</p>
+    <!-- VVIP Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold fs-4 text-gradient" href="#">ZAIN.DEV</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto fw-medium">
+                    <li class="nav-item"><a class="nav-link px-3" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section d-flex align-items-center min-vh-100">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7 text-center text-lg-start">
+                    <h5 class="text-uppercase tracking-wider text-secondary mb-3" style="letter-spacing: 2px;">Welcome to my world</h5>
+                    <h1 class="display-3 fw-bold mb-3">Hi, I'm <span class="text-gradient">Zainulabdin Memon</span></h1>
+                    <h2 class="h1 fw-light text-secondary mb-4">A Next-Gen Web Developer.</h2>
+                    <p class="lead text-secondary mb-5" style="max-width: 600px;">
+                        I am an Information Technology student in my second year at the University of Sindh. Currently, I am deeply focused on leveling up my coding skills, exploring new web technologies, and building real-world digital solutions.
+                    </p>
+                    <a href="#contact" class="btn btn-premium btn-lg">Let's Connect <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+                <div class="col-lg-5 text-center">
+                    <!-- High-tech Glowing Avatar Setup -->
+                    <div class="position-relative d-inline-block">
+                        <div class="position-absolute top-50 start-50 translate-middle bg-gradient rounded-circle" style="width: 260px; height: 260px; background: linear-gradient(135deg, #6366f1, #ec4899); filter: blur(30px); opacity: 0.4;"></div>
+                        <img src="my pic.jpg" class="position-relative img-fluid rounded-circle border border-4 border-secondary p-2 bg-dark shadow-lg" style="width: 250px; height: 250px; object-fit: cover;" alt="Zainulabdin Memon">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5" style="background: rgba(255,255,255,0.01);">
+        <div class="container py-5 text-center" style="max-width: 800px;">
+            <h2 class="display-5 fw-bold mb-4">About <span class="text-gradient">Me</span></h2>
+            <p class="lead text-secondary lh-lg">
+                Hello! I am an IT student currently pursuing my second year at the University of Sindh. I have a strong passion for technology and software development. Right now, I am completely invested in my coding journey—learning modern frameworks, writing clean code, and working on web projects. My goal is to transform creative ideas into functional, interactive digital experiences as I grow into a professional developer.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-5">
+        <div class="container py-5 text-center">
+            <h2 class="display-5 fw-bold mb-5">My <span class="text-gradient">Tech Stack</span></h2>
+            <div class="d-flex flex-wrap justify-content-center" style="max-width: 900px; margin: 0 auto;">
+                <span class="skill-badge"><i class="bi bi-filetype-html me-2"></i>HTML5</span>
+                <span class="skill-badge"><i class="bi bi-filetype-css me-2"></i>CSS3</span>
+                <span class="skill-badge"><i class="bi bi-bootstrap-fill me-2"></i>Bootstrap 5</span>
+                 <span class="skill-badge"><i class="bi bi-code-square me-2"></i>C++</span>
+                <span class="skill-badge"><i class="bi bi-code-slash me-2"></i>Data Structures</span>
+                <span class="skill-badge"><i class="bi bi-laptop me-2"></i>Google AI</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5" style="background: rgba(255,255,255,0.01);">
+        <div class="container py-5">
+            <h2 class="display-5 fw-bold text-center mb-5">Featured <span class="text-gradient">Projects</span></h2>
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-md-4">
+                    <div class="card vvip-card h-100 p-3 text-white">
+                        <div class="card-body">
+                            <div class="text-gradient fs-1 mb-3"><i class="bi bi-person-bounding-box"></i></div>
+                            <h4 class="card-title fw-bold mb-3">Personal Portfolio</h4>
+                            <p class="card-text text-secondary">A highly premium portfolio website engineered with Bootstrap 5, glassmorphism UI principles, and fully fluid responsiveness.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="col-md-4">
+                    <div class="card vvip-card h-100 p-3 text-white">
+                        <div class="card-body">
+                            <div class="text-gradient fs-1 mb-3"><i class="bi bi-terminal-fill"></i></div>
+                            <h4 class="card-title fw-bold mb-3">Student Record Management</h4>
+                            <p class="card-text text-secondary">A robust console application built using C++ to handle system files and database records flawlessly.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="col-md-4">
+                    <div class="card vvip-card h-100 p-3 text-white">
+                        <div class="card-body">
+                            <div class="text-gradient fs-1 mb-3"><i class="bi bi-window-sidebar"></i></div>
+                            <h4 class="card-title fw-bold mb-3">E-Commerce Frontend UI</h4>
+                            <p class="card-text text-secondary">A modern web layout designed for seamless digital shopping layouts, featuring hover cards and optimized speed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container py-5 text-center" style="max-width: 600px;">
+            <h2 class="display-5 fw-bold mb-4">Let's Work <span class="text-gradient">Together</span></h2>
+            <p class="text-secondary mb-4">If you have any project ideas or questions, feel free to reach out to me via email below.</p>
+            <h3 class="fw-bold mb-5 text-white" style="border-bottom: 2px dashed #6366f1; display: inline-block; padding-bottom: 10px;">zainmemo619@gmail.com</h3>
+            
+            <!-- Social Links -->
+            <div class="d-flex justify-content-center gap-4">
+                <!-- LinkedIn (Color Fixed!) -->
+                <a href="https://www.linkedin.com/in/zain-ul-abdin-memon-390168415/" target="_blank" class="text-white fs-2" style="transition: 0.3s; color: #0077B5 !important;"><i class="bi bi-linkedin"></i></a>
+                
+                <!-- WhatsApp -->
+                <a href="https://wa.me/923053648441" target="_blank" class="text-white fs-2" style="transition: 0.3s; color: #25D366 !important;"><i class="bi bi-whatsapp"></i></a>
+                
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/zainulabdin_memon619?igsh=MTk1a2hjNnF6dDdjcg==" target="_blank" class="text-white fs-2" style="transition: 0.3s; color: #E1306C !important;"><i class="bi bi-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 text-secondary border-top border-secondary" style="border-color: rgba(255,255,255,0.05) !important;">
+        <p class="mb-0">&copy; 2026 Crafted with ❤️ by Zainulabdin.</p>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
